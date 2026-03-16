@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<student>
+    <ime>Maksim</ime>
+    <prezime>Nedeljković</prezime>
+    <JMBG>1234567890123</JMBG>
+    <datumRodjenja>2005-04-09</datumRodjenja>
+    <godinaStudija>2</godinaStudija>
+
+    <kontakt>
+        <email>maksim@email.com</email>
+        <telefon>0911234567</telefon>
+    </kontakt>
+
+    <listaKolegija>
+        <kolegij>
+            <naziv>Web tehnologije</naziv>
+            <profesor>Ivan Horvat</profesor>
+            <ects>6</ects>
+        </kolegij>
+
+        <kolegij>
+            <naziv>Baze podataka</naziv>
+            <profesor>Marko Marić</profesor>
+            <ects>5</ects>
+        </kolegij>
+
+        <kolegij>
+            <naziv>Programiranje</naziv>
+            <profesor>Ana Kovač</profesor>
+            <ects>7</ects>
+        </kolegij>
+    </listaKolegija>
+
+</student>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<student>
+    <ime>Maksim</ime>
+    <prezime>Nedeljković</prezime>
+    <JMBAG>0246127057</JMBAG>
+    <datumRodjenja>2005-04-09</datumRodjenja>
+    <godinaStudija>2</godinaStudija>
+    <studijskiProgram>Informatički dizajn</studijskiProgram>
+
+    <adresa>
+        <ulica>Maksimirska cesta 45</ulica>
+        <grad>Zagreb</grad>
+        <postanskiBroj>10000</postanskiBroj>
+    </adresa>
+</student>
