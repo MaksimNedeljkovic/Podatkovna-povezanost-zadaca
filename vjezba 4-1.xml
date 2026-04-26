@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Podaci xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="schema.xsd">
+
+    <ime>Ivan</ime>
+    <cijena>23.99</cijena>
+    <godine>26</godine>
+    <aktivan>true</aktivan>
+    <datumRodjenja>2000-03-12</datumRodjenja>
+    <vrijemePocetka>07:32:00</vrijemePocetka>
+
+</Podaci>

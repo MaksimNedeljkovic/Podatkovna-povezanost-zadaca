@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<narudzba xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="schema.xsd">
+
+    <kupac>Ivan</kupac>
+
+    <datumNarudzbe>2026-04-26</datumNarudzbe>
+
+    <kolicina>23</kolicina>
+
+    <statusNarudzbe>poslana</statusNarudzbe>
+
+    <ukupanIznos valuta="EUR">234.99</ukupanIznos>
+
+</narudzba>
