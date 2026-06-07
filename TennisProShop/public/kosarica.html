@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Košarica</title>
+
+<style>
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f5f7fa;
+  padding:30px;
+}
+
+h1{
+  color:#0b7a42;
+}
+
+.stavka{
+  background:white;
+  padding:15px;
+  margin:10px 0;
+  border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+button{
+  background:#0b7a42;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.ukupno{
+  margin-top:20px;
+  font-size:1.2rem;
+  font-weight:bold;
+}
+nav{
+    margin-bottom:25px;
+}
+
+nav a{
+    text-decoration:none;
+    background:#0b7a42;
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    margin-right:10px;
+}
+</style>
+</head>
+<body>
+
+<h1>🛒 Moja košarica</h1>
+<nav>
+    <a href="/">🏠 Početna</a>
+</nav>
+<div id="kosarica"></div>
+
+<p class="ukupno" id="ukupno"></p>
+
+<button onclick="naruci()">
+  Potvrdi narudžbu
+</button>
+
+<script>
+
+async function ucitajKosaricu(){
+
+  const odgovor =
+    await fetch('/api/kosarica');
+
+  const proizvodi =
+    await odgovor.json();
+
+  const kosaricaDiv =
+    document.getElementById('kosarica');
+
+  let ukupno = 0;
+
+  kosaricaDiv.innerHTML = '';
+
+  proizvodi.forEach(proizvod => {
+
+    ukupno += proizvod.cijena;
+
+   kosaricaDiv.innerHTML += `
+  <div class="stavka">
+
+    <h3>${proizvod.naziv}</h3>
+
+    <p>${proizvod.cijena} €</p>
+
+    <button onclick="ukloniIzKosarice(${proizvod.id})">
+      Ukloni
+    </button>
+
+  </div>
+`;
+  });
+
+  document.getElementById('ukupno').innerText =
+    `Ukupno: ${ukupno} €`;
+}
+async function ukloniIzKosarice(id){
+
+  await fetch(`/api/kosarica/${id}`, {
+    method: 'DELETE'
+  });
+
+  ucitajKosaricu();
+}
+async function naruci(){
+
+  const odgovor =
+    await fetch('/api/narudzba',{
+      method:'POST'
+    });
+
+  const podaci =
+    await odgovor.json();
+
+  alert(
+    `Narudžba uspješna!\nUkupno: ${podaci.narudzba.ukupno} €`
+  );
+
+  ucitajKosaricu();
+}
+
+ucitajKosaricu();
+
+</script>
+
+</body>
+</html>
