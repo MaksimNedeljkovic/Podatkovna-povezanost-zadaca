@@ -1,0 +1,5 @@
+1. /Studenti/*
+2. /Studenti/Student/*
+3. //Kolokviji[@*]
+4. //@*
+5. //Predmet//*
